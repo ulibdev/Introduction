@@ -6,9 +6,8 @@ int main(){
 	int A = 0;
 	
 	do{
-		A++;
 		std::cout<<A<<std::endl;
-		
+		A++;
 	}while(A<=18);
 	
 
