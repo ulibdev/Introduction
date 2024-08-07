@@ -1,50 +1,54 @@
 #include <iostream>
-
+#include <conio.h>
 using namespace std;
 
+
 struct Node{
-    int num;
-    Node *next;
+	char letter;
+	Node *next;
 };
 
-void addPila(Node *&pila, int n);
-void quitPila(Node *&pila, int &n);
+void addPila(Node *&pila,char);
+void quitPila(Node *&pila,char &);
+
 
 int main(){
-    Node *pila = NULL;
-    int n1, n2, aux;
-    
-    cout << "Ingrese un numero: ";
-    cin >> n1;
-    cout << "Ingrese un numero: ";
-    cin >> n2;
-    addPila(pila, n1);
-    addPila(pila, n2);
-
-    cout << "Elementos de la pila en el orden en que se sacaron: " << endl;
-    while(pila != NULL){
-        quitPila(pila, aux);
-        cout << aux << endl;
-    }
-
-    return 0;
+	Node *pila = NULL;
+	char a = 'a', b = 'b', c = 'c';
+	addPila(pila,a);
+	addPila(pila,c);
+	addPila(pila,b);
+	addPila(pila,b);
+	addPila(pila,b);
+	addPila(pila,b);
+	addPila(pila,b);
+	
+	
+	while(pila != NULL){
+		quitPila(pila,a);
+		if (pila != NULL){
+			cout<<",";
+		}else{
+			cout<<".";
+		}
+	}
+	
+	getch();
+	return 0;
 }
 
-void addPila(Node *&pila, int n){
-    Node *new_node = new Node();
-    new_node -> num = n;
-    new_node -> next = pila;
-    pila = new_node;
+void addPila(Node *&pila,char a){
+	Node *new_node = new Node;
+	new_node->letter = a;
+	new_node->next = pila;
+	pila = new_node;
+
 }
 
-void quitPila(Node *&pila, int &n){
-    if(pila == NULL){
-        cout << "Pila vacía" << endl;
-        return;
-    }
+void quitPila(Node *&pila,char &a){
+	Node *aux = pila;
+	a = aux->letter;
+	pila = aux->next;
+	delete aux;
 
-    n = pila -> num;
-    Node *temp = pila;
-    pila = pila -> next;
-    delete temp;
 }
