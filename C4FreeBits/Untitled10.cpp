@@ -16,12 +16,19 @@ int main(){
 	
 	delete[] dNum;
 	
+	
 	return 0;
 }
 
 void needNumbers(){
 	cout<<"Numbers: ";
 	cin>>num;
+	
+	if (num <= 0) {
+        cerr << "Error:The number is negative" << endl;
+        exit(1);
+    }
+	
 	
 	dNum = new int[num];
 	for(int i = 0;i<num;i++){
