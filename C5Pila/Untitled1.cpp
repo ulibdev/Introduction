@@ -18,10 +18,6 @@ int main(){
 	addPila(pila,a);
 	addPila(pila,c);
 	addPila(pila,b);
-	addPila(pila,b);
-	addPila(pila,b);
-	addPila(pila,b);
-	addPila(pila,b);
 	
 	
 	while(pila != NULL){
